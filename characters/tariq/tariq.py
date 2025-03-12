@@ -27,12 +27,20 @@ class Tariq(BaseCharacter):
         # Max fury scales off strength. Abilities cost %fury
         self.max_fury = self.main_stat * 12
 
-        # NOTE: Consider doing the scaling on ability side instead, keeping fury clamped to the 0-100 range. Whether or not this is possible will depend on how the DifficultyScale actually changes in the fury formulas... In town, at least, it's been found to be a flat 1.0. Further data is required for behavior in dungeon.
+        # NOTE: Consider doing the scaling on ability side instead, keeping 
+        # fury clamped to the 0-100 range. Whether or not this is possible 
+        # will depend on how the DifficultyScale actually changes in the fury 
+        # formulas... In town, at least, it's been found to be a flat 1.0. 
+        # Further data is required for behavior in dungeon.
         # TODO: Z - Verify this math with the data you have.
 
         # Fury formulas given below:
-        # Ink.Rage.MaxRageMultiplier, 12; This is multiplied with his strength and will result in his total amount of max rage
-        # Ink.Rage.RageIncreaseBaseline, 26; The rage will increase by (RageIncreaseBaseline) * (Damage done / (DifficultyDamageScale * 100)) to ensure that the rage increase is constant during levels
+        # This is multiplied with his strength and will result in his total amount of max rage
+        # Ink.Rage.MaxRageMultiplier, 12
+        # The rage will increase by 
+        # (RageIncreaseBaseline) * (Damage done / (DifficultyDamageScale * 100)) 
+        # to ensure that the rage increase is constant during levels
+        # Ink.Rage.RageIncreaseBaseline, 26
         # Ink.Rage.OutOfCombat.TickInterval, 1.0
         # Ink.Rage.OutOfCombat.AmountToSpendPerTick, 0.01 ; Percentage of Max Rage
 
